@@ -43,12 +43,11 @@ class CustomWebViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        if webViewAlreadyLoaded {
-            timeTitle.text = "Webview already loaded"
-        }
         viewDidLoadAt = Date()
         if webview == nil {
             loadWebView()
+        } else if webViewAlreadyLoaded {
+            timeTitle.text = "Webview already loaded"
         }
         
         view.addSubview(navigationBar)
